@@ -1,4 +1,5 @@
 import { galleryItems } from './gallery-items.js';
+
 // Change code below this line
 console.log(galleryItems);
 
@@ -27,7 +28,31 @@ function selectImg(event) {
     event.preventDefault();
     if (event.target.nodeName !== "IMG")
         return; 
+    
+    const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="1200" height="600">`,
+        {
+         onShow: () => gallery.addEventListener("keydown", escModalClose),
+         onclose: () => gallery.removeEventListener("keydown", escModalClose)
+        }
+    
+    )
+
+    instance.show()
+    
+    function escModalClose(event) {
+    if (event.code === "Escape") {
+        instance.close();
 }
+}
+}
+
+
+
+
+
+
+
 
 
 
