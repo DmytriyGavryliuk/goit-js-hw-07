@@ -21,13 +21,10 @@ const imageList = galleryItems.map(
 gallery.insertAdjacentHTML('afterbegin', imageList);
 
 
-// gallery.addEventListener(`click`, changeImg);
 
-// function changeImg(event) {
-//     event.preventDefault();
 let lightbox = new SimpleLightbox('.gallery a', {
         captionType: "attr",
-        captionData: "alt",
+        captionsData: "alt",
         captionDelay: 250,
     });
 
