@@ -25,7 +25,7 @@ gallery.insertAdjacentHTML('afterbegin', imageList);
 
 // function changeImg(event) {
 //     event.preventDefault();
-let lightbox = new SimpleLightbox('.gallery__item .gallery__link', {
+let lightbox = new SimpleLightbox('.gallery a', {
         captionType: "attr",
         captionData: "alt",
         captionDelay: 250,
